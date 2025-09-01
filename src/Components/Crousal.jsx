@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import botOne from "../assets/botone.png";
+import botOne from "../assets/botOne.png";
 import botTwo from "../assets/botTwo.png";
 import botThree from "../assets/botThree.png";
 import botFour from "../assets/botFour.png";
