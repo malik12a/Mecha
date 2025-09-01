@@ -1,5 +1,5 @@
 import React from "react";
-import Crousal from "../components/Crousal";
+import Crousal from "../Components/Crousal";
 import MainBanner from "../Components/MainBanner";
 import FAQS from "../Components/FAQS";
 import HowItWorks from "../Components/HowItWorks";
