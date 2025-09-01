@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-montserrat: "Montserrat", sans-serif;
+}
+@layer utilities {
+  .bg-custom-gradient {
+    background: linear-gradient(270.62deg, #2d1a6e -71.79%, #6d7aff 10.68%),
+      linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  }
+
+  .bg-text {
+    background: #6d7aff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .bg-button {
+    background: #6d7aff;
+  }
+
+  .bg-border {
+    background: #6d7aff;
+  }
+
+  .bg-button2 {
+    background: linear-gradient(90deg, #6d7aff 0%, #d44fff 50%, #ffc371 100%);
+  }
+
+  .text-color {
+    background:  #6d7aff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text; /* For Safari and others */
+    color: transparent;
+  }
+
+  :root {
+    --border-width: 2px;
+    --border-glow: 66 100% 53%;
+  }
+
+  @property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+
+  .animated-border {
+    position: relative;
+    display: inline-block;
+    border-radius: rem;
+    z-index: 0;
+  }
+
+  .animated-border::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: var(--border-width);
+    border-radius: inherit;
+    z-index: -1;
+    background: conic-gradient(
+      from var(--angle),
+      hsl(var(--border-glow)) 0deg,
+      transparent 90deg,
+      transparent 360deg
+    );
+    animation: border-move 4s linear infinite;
+    background-clip: padding-box;
+
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+  }
+
+  @keyframes border-move {
+    from {
+      --angle: 360deg;
+    }
+    to {
+      --angle: 0deg;
+    }
+  }
+}
